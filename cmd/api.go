@@ -36,8 +36,6 @@ var apiCmd = &cobra.Command{
 	Short: "Configure your prowlapp.com API key.",
 	Run: func(cmd *cobra.Command, args []string) {
 		switch len(args) {
-		case 0:
-			fmt.Println("API key:", viper.Get("apiKey"))
 		case 1:
 			viper.Set("apiKey", args[0])
 			settings, _ := json.Marshal(viper.AllSettings())
@@ -47,7 +45,7 @@ var apiCmd = &cobra.Command{
 
 				if err != nil {
 					fmt.Println("Error: couldn't create config file", err)
-					os.Exit(1)
+					os.Exit(-1)
 				}
 
 				defer f.Close()
@@ -57,12 +55,12 @@ var apiCmd = &cobra.Command{
 
 				if err != nil {
 					fmt.Println("Error: unable to write config file")
-					os.Exit(1)
+					os.Exit(-1)
 				}
 			}
 		default:
-			fmt.Println("Error: api only takes 1 parameter")
-			os.Exit(1)
+			fmt.Println("Error: api takes 1 parameter")
+			os.Exit(-1)
 		}
 	},
 }
