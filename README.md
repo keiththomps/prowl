@@ -10,7 +10,7 @@ If you have go installed you can use
 $ go install github.com/keiththomps/prowl
 ```
 
-If not you can pull the binary from the releases and place it in your path.
+If not you can grab [the latest release](https://github.com/keiththomps/prowl/releases/latest) and place it in your $PATH.
 
 ## Configuration
 
