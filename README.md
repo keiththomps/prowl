@@ -7,7 +7,7 @@ A simple CLI for sending iPhone push notifications via [prowlapp.com](prowlapp.c
 If you have go installed you can use
 
 ```shell
-$ go install github.com/keiththomps/prowl
+$ go get -u github.com/keiththomps/prowl
 ```
 
 If not you can grab [the latest release](https://github.com/keiththomps/prowl/releases/latest) and place it in your $PATH.
